@@ -3,7 +3,10 @@ let teclas = generarTeclas(niveles)
 
 function siguienteNivel(nivelActual) {
     if (nivelActual==niveles) {
-        return alert('Ganaste');
+        return swal({
+            title:'Ganaste',
+            type: 'success'
+        });
     }
     alert(`Nivel ${nivelActual + 1}`);
     for (let i = 0; i <= nivelActual; i++) {
