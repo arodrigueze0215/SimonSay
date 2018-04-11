@@ -1,0 +1,22 @@
+{
+  "name": "simondice",
+  "version": "1.0.0",
+  "description": "A easy game where you need to guess a secuence of letters",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Are0215/SimonDice.git"
+  },
+  "author": "arodrigueze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Are0215/SimonDice/issues"
+  },
+  "homepage": "https://github.com/Are0215/SimonDice#readme",
+  "devDependencies": {
+    "webpack": "^4.5.0"
+  }
+}
