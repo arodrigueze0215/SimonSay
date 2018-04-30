@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import Row from './Row.jsx'
+import KeyBoard from './KeyBoard.jsx'
 
 const target = document.getElementById('reactContainer');
 
 if (target!==null) {
     render(
-       <Row/>,
+       <KeyBoard/>,
         target
     );    
 }
