@@ -1,7 +1,6 @@
-const niveles = 15
-let teclas = generarTeclas(niveles);
-
-function siguienteNivel(nivelActual) {
+const niveles = 15;
+let teclas;
+let siguienteNivel = (nivelActual) =>{
     if (nivelActual==niveles) {
         return swal({
             title:'Ganaste',
@@ -49,23 +48,14 @@ function siguienteNivel(nivelActual) {
         }
     }
 }
-siguienteNivel(0)
 
-function generarTeclas(niveles) {
-    return new Array(niveles).fill(0).map(generarTeclaAleatoria)
-}
-
-function generarTeclaAleatoria() {
+let generarTeclaAleatoria = () =>{
     const min = 65
     const max = 90
     return Math.round(Math.random() * (max - min) + min)
 }
 
-function getElementByKeyCode(keyCode) {
-    return document.querySelector(`[data-key="${keyCode}"]`)
-}
-
-function activate(keyCode, opts = {}) {
+let activate = (keyCode, opts = {}) =>{
     const el = getElementByKeyCode(keyCode)
     el.classList.add('active')
     if (opts.success) {
@@ -76,6 +66,13 @@ function activate(keyCode, opts = {}) {
     setTimeout(() => deactivate(el), 500)
 }
 
-function deactivate(el) {
+let deactivate = (el) =>{
     el.className = 'key'
+}
+let getElementByKeyCode = (keyCode) => document.querySelector(`[data-key="${keyCode}"]`);
+let generarTeclas = (niveles) => new Array(niveles).fill(0).map(generarTeclaAleatoria);
+
+export default function start(nivelActual){
+    teclas = generarTeclas(niveles);
+    siguienteNivel(nivelActual);
 }
