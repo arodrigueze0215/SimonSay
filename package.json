@@ -4,8 +4,7 @@
   "description": "A easy game where you need to guess a secuence of letters",
   "main": "init.js",
   "scripts": {
-    "dev": "webpack -d",
-    "dev:server": "webpack-dev-server --config ./webpack.config.js",
+    "dev": "webpack -d -w",
     "build": "webpack --config ./webpack.dist.config.js"
   },
   "repository": {

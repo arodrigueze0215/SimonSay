@@ -20,7 +20,7 @@ let siguienteNivel = (nivelActual) =>{
     let teclaActual = teclas[i];
     window.addEventListener('keydown', onkeydown);
 
-    let onkeydown = (ev) => {
+    function onkeydown(ev) {
         if (ev.keyCode==teclaActual) {
         activate(teclaActual, {succes:true});
         i++;
@@ -34,7 +34,7 @@ let siguienteNivel = (nivelActual) =>{
         window.removeEventListener('keydown', onkeydown);
         var sw=swal({
             title:'Perdiste :(',
-            text: '¿Quieres jugar de nuevo?',
+            text: 'Quieres jugar de nuevo?',
             buttons:{
                 cancel: 'No',
                 acept: true

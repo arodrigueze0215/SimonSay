@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'open_sansregular';
-  src: url(C:\Users\arodriguez\Documents\GitHub\simonDice\dist/fonts/ef387175ee4070780d18892de7069260-OpenSans-Regular-webfont.eot);
-  src: url(C:\Users\arodriguez\Documents\GitHub\simonDice\dist/fonts/ef387175ee4070780d18892de7069260-OpenSans-Regular-webfont.eot?#iefix) format('embedded-opentype'),
-       url(C:\Users\arodriguez\Documents\GitHub\simonDice\dist/fonts/c8ffdeb3144d5055756ef01ef98e8486-OpenSans-Regular-webfont.woff) format('woff'),
-       url(C:\Users\arodriguez\Documents\GitHub\simonDice\dist/fonts/898df6ace02d47164941381c9be0a0bc-OpenSans-Regular-webfont.ttf) format('truetype'),
-       url(C:\Users\arodriguez\Documents\GitHub\simonDice\dist/fonts/3ed2bcffd36fb8cfd6b16cafe9735a78-OpenSans-Regular-webfont.svg#open_sansregular) format('svg');
+  src: url(../../dist/fonts/ef387175ee4070780d18892de7069260-OpenSans-Regular-webfont.eot);
+  src: url(../../dist/fonts/ef387175ee4070780d18892de7069260-OpenSans-Regular-webfont.eot?#iefix) format('embedded-opentype'),
+       url(../../dist/fonts/c8ffdeb3144d5055756ef01ef98e8486-OpenSans-Regular-webfont.woff) format('woff'),
+       url(../../dist/fonts/898df6ace02d47164941381c9be0a0bc-OpenSans-Regular-webfont.ttf) format('truetype'),
+       url(../../dist/fonts/3ed2bcffd36fb8cfd6b16cafe9735a78-OpenSans-Regular-webfont.svg#open_sansregular) format('svg');
   font-weight: normal;
   font-style: normal;
 
