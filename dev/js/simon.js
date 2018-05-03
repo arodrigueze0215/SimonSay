@@ -14,12 +14,13 @@ let siguienteNivel = (nivelActual) =>{
     });
 
     for (let i = 0; i <= nivelActual; i++) {
-        setTimeout(()=> activate(teclas[i]), 1000*(i+1)+1000);          
+        setTimeout(()=> activate(teclas[i]), 1000*(i+1)+1000);
     }
     let i=0;
     let teclaActual = teclas[i];
     window.addEventListener('keydown', onkeydown);
-    function onkeydown(ev) {
+
+    let onkeydown = (ev) => {
         if (ev.keyCode==teclaActual) {
         activate(teclaActual, {succes:true});
         i++;
