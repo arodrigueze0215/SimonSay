@@ -7,21 +7,22 @@ import nextLevel from '../simon.js';
 class Keyboard extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            classkey:'key',
+            keyid: 0
+        };
         this.arrTotal = new Array();
     }
     componentDidMount(){
         nextLevel(0);
-        console.log(this.initRowOne());
-        console.log(this.initRowTwo());
-        console.log(this.initRowThree());
         console.log(this.arrTotal)
     }
     render() {
         return(
             <div className="keyboard">
-                <RowOne keys={this.initRowOne()}/>
-                <RowTwo/>
-                <RowThree/>
+                <RowOne  {...this.state} keys={this.initRowOne()}/>
+                <RowTwo {...this.state} keys={this.initRowTwo()}/>
+                <RowThree {...this.state} keys={this.initRowThree()}/>
             </div>
         );
     }
@@ -102,4 +103,10 @@ class Keyboard extends Component{
 
     }
 }
+let randomKeys = () =>{
+    const min = 65
+    const max = 90
+    return Math.round(Math.random() * (max - min) + min)
+}
+let generarTeclas = (levels) => new Array(levels).fill(0).map(randomKeys);
 export default Keyboard;

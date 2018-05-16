@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Keys from './Keys.jsx';
 
 class RowOne extends Component{
     constructor(props){
@@ -6,18 +7,17 @@ class RowOne extends Component{
 
     }
     render(){
+        const listKey = this.props.keys.map((key) =>
+            <Keys 
+                {...this.props}
+                key={key.key}
+                kvalue={key.key}
+                value={key.value}
+            />
+        );
         return(
             <div className="row">
-            {this.props.keys.map((key)=>{
-                console.log(key.value);
-                <div 
-                    id={key}
-                    className="key" 
-                    data-key={key}>
-                    {key.value}
-                </div>
-
-            })}
+                {listKey}
             </div>
         );
     }

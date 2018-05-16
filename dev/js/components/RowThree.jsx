@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
-
+import Keys from './Keys.jsx';
 class RowThree extends Component{
     constructor(props){
         super(props);
 
     }
     render(){
+        const listKey = this.props.keys.map((key) =>
+            <Keys 
+                {...this.props}
+                key={key.key}
+                kvalue={key.key}
+                value={key.value}
+            />
+        );
         return(
             <div className="row last">
-                <div className="key" data-key="90">z</div>
-                <div className="key" data-key="88">x</div>
-                <div className="key" data-key="67">c</div>
-                <div className="key" data-key="86">v</div>
-                <div className="key" data-key="66">b</div>
-                <div className="key" data-key="78">n</div>
-                <div className="key" data-key="77">m</div>
+                {listKey}
             </div>
         );
     }
