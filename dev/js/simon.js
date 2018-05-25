@@ -22,30 +22,30 @@ let siguienteNivel = (nivelActual) =>{
 
     function onkeydown(ev) {
         if (ev.keyCode==teclaActual) {
-        activate(teclaActual, {succes:true});
-        i++;
-        if (i>nivelActual) {
-            window.removeEventListener('keydown', onkeydown);
-            setTimeout(()=>siguienteNivel(i),1500);
-        }
-        teclaActual = teclas[i];
+            activate(teclaActual, {succes:true});
+            i++;
+            if (i>nivelActual) {
+                window.removeEventListener('keydown', onkeydown);
+                setTimeout(()=>siguienteNivel(i),1500);
+            }
+            teclaActual = teclas[i];
         } else{
-        activate(ev.keyCode, {fail:true});
-        window.removeEventListener('keydown', onkeydown);
-        var sw=swal({
-            title:'Perdiste :(',
-            text: 'Quieres jugar de nuevo?',
-            buttons:{
-                cancel: 'No',
-                acept: true
-            }
-        });
-        sw.then((value)=>{
-            if (value) {
-                teclas = generarTeclas(niveles);
-                siguienteNivel(0);               
-            }
-        });
+            activate(ev.keyCode, {fail:true});
+            window.removeEventListener('keydown', onkeydown);
+            var sw=swal({
+                title:'Perdiste :(',
+                text: 'Quieres jugar de nuevo?',
+                buttons:{
+                    cancel: 'No',
+                    acept: true
+                }
+            });
+            sw.then((value)=>{
+                if (value) {
+                    teclas = generarTeclas(niveles);
+                    siguienteNivel(0);               
+                }
+            });
         }
     }
 }
