@@ -10,6 +10,7 @@ module.exports = {
         filename:'js/[name].js',
         publicPath:'../../dist/'
     },
+    devtool:'eval-source-map',
     module:{
         rules:[
             {
