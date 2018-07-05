@@ -9,7 +9,7 @@ import DisplayResult from './DisplayResult.jsx';
 class Board extends Component {
     constructor(props) {
         super(props);
-        this.levels = 15;
+        this.levels = 2;
         this.state = {
             classkey:'key',
             classkeyfail:'key active fail',
@@ -18,7 +18,8 @@ class Board extends Component {
             fail: false,
             keyid: 0,
             displaylevel: '0',
-            displayresult: ''
+            displayresult: '',
+            displayOk: false
         };
         this.arrTotal = new Array();
         this.arrOne = new Array();
@@ -124,8 +125,10 @@ class Board extends Component {
      nextlevel(currentLevel) {
          if (currentLevel==this.levels) {
                 this.setState({
+                    displayOk: true,
                     displayresult: 'Muy bien..!! Eres un excelente ganador.'
                 });
+                return;
              //shpw the message if you win
          }
          this.setState({
@@ -133,7 +136,7 @@ class Board extends Component {
          });
          for (let i = 0; i <= currentLevel; i++) {
              
-             setTimeout(() => {this.activate(this.kboard[i])}, 1000*(i+1)+1000);            
+             setTimeout(() => {this.activate(this.kboard[i])}, 1000*(i+1)+1000);
          }
          let i=0;
          let currentKey = this.kboard[i];
@@ -153,6 +156,7 @@ class Board extends Component {
                  _this.activate(ev.keyCode, {fail:true});
                  window.removeEventListener('keydown', onkeydown);
                  _this.setState({
+                    displayOk: false,
                     displayresult: 'Ohhh.. que pena!! Perdiste.'
                 });
              }

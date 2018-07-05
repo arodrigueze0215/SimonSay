@@ -3,7 +3,7 @@ import React from 'react';
 function DisplayLevel(props) {
     return(
         <div className="display__level">
-            <p>Nivel {props.displaylevel}</p>
+            <h2>Nivel {props.displaylevel}</h2>
         </div>
     )
 }

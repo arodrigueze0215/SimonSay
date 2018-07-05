@@ -71,9 +71,14 @@ body {
 }
 .display__level {
   flex-grow: 1;
+  text-align: center;
+  font-size: 20px;
 }
 .display__result {
   flex-grow: 1;
+  text-align: center;
+  font-size: 20px;
+  min-height: 100px;
 }
 
 @keyframes appear {
