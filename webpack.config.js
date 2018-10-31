@@ -39,7 +39,7 @@ module.exports = {
                 use:{
                     loader:'babel-loader',
                     options:{
-                        presets:['es2015', 'react', 'stage-2']
+                        presets:['env', 'react', 'stage-2']
                     }
                 }
             }
@@ -50,5 +50,10 @@ module.exports = {
         new ExtractTextPlugin({
             filename: 'css/styles.css'
         })
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dev'),
+        port: 9000
+      }
+    
 }
