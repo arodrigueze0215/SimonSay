@@ -16,6 +16,7 @@ class Board extends Component {
             classkeyactive:'key active',
             success: false,
             fail: false,
+            tryAgain: false,
             keyid: 0,
             displaylevel: '0',
             displayresult: '',
@@ -28,6 +29,7 @@ class Board extends Component {
         this.initRowOne();
         this.initRowTwo();
         this.initRowThree();
+        this.tryAgainEvent = this.tryAgainEvent.bind(this)
 
     }
     componentDidMount(){
@@ -47,9 +49,17 @@ class Board extends Component {
                     <RowTwo {...this.state} keys={this.arrTwo}/>
                     <RowThree {...this.state} keys={this.arrThree}/>
                 </Keyboard>
-               <DisplayResult {...this.state}/>
+                <DisplayResult {...this.state} onClick={this.tryAgainEvent}/>
+
             </div>
         );
+    }
+
+    tryAgainEvent = () =>{
+        console.log('again')
+        this.kboard = generateKeyboard(this.levels);
+        this.nextlevel(0);
+
     }
 
     initRowOne() {
@@ -126,10 +136,12 @@ class Board extends Component {
          if (currentLevel==this.levels) {
                 this.setState({
                     displayOk: true,
-                    displayresult: 'Muy bien..!! Eres un excelente ganador.'
+                    displayresult: 'Muy bien..!! Eres un excelente ganador.',
+                    tryAgain: true
                 });
+                console.log('you win')
                 return;
-             //shpw the message if you win
+             //show the message if you win
          }
          this.setState({
              displaylevel: currentLevel.toString()
@@ -157,7 +169,8 @@ class Board extends Component {
                  window.removeEventListener('keydown', onkeydown);
                  _this.setState({
                     displayOk: false,
-                    displayresult: 'Ohhh.. que pena!! Perdiste.'
+                    displayresult: 'Ohhh.. que pena!! Perdiste.',
+                    tryAgain: true
                 });
              }
          }
