@@ -9,12 +9,12 @@ function DisplayResult(props) {
     }
     return(
         <div>
-            <div className="display__result">
-                <h2 style={props.displayOk?styleOk:styleFail}>{props.displayresult}</h2>            
-                { props.tryAgain &&
-                    <button className="btn__tryAgain" onClick={props.onClick}>Try again</button>
-                }
-            </div>
+            { props.tryAgain &&
+                <div className="display__result">
+                    <h2 style={props.displayOk?styleOk:styleFail}>{props.displayresult}</h2>            
+                        <button className="btn__tryAgain" onClick={props.onClick}>Volver a jugar</button>
+                </div>
+            }
         </div>
 
     );

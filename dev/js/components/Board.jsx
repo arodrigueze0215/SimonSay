@@ -9,7 +9,7 @@ import DisplayResult from './DisplayResult.jsx';
 class Board extends Component {
     constructor(props) {
         super(props);
-        this.levels = 2;
+        this.levels = 15;
         this.state = {
             classkey:'key',
             classkeyfail:'key active fail',
@@ -56,7 +56,9 @@ class Board extends Component {
     }
 
     tryAgainEvent = () =>{
-        console.log('again')
+        this.setState({
+            tryAgain:false
+        });
         this.kboard = generateKeyboard(this.levels);
         this.nextlevel(0);
 
@@ -139,7 +141,6 @@ class Board extends Component {
                     displayresult: 'Muy bien..!! Eres un excelente ganador.',
                     tryAgain: true
                 });
-                console.log('you win')
                 return;
              //show the message if you win
          }
