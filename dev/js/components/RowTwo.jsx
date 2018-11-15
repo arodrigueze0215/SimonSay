@@ -1,22 +1,41 @@
 import React, {Component} from 'react';
-
+import Keys from './Keys.jsx';
 class RowTwo extends Component{
     constructor(props){
         super(props);
 
     }
     render(){
+        const listKey = this.props.keys.map((key) =>{
+            if (this.props.keyid == key.key && this.props.fail) {
+               return <Keys 
+                            key={key.key}
+                            kvalue={key.key}
+                            value={key.value}
+                            classkey = {this.props.classkeyfail}
+                        />
+                
+            } else if(this.props.keyid == key.key && this.props.success) {
+                return <Keys 
+                key={key.key}
+                kvalue={key.key}
+                value={key.value}
+                classkey = {this.props.classkeyactive}
+            />
+            } else {
+                return <Keys 
+                            classkey = {this.props.classkey}
+                            key={key.key}
+                            kvalue={key.key}
+                            value={key.value}
+                        />
+            }
+
+        }
+        );
         return(
             <div className="row">
-                <div className="key" data-key="65">a</div>
-                <div className="key" data-key="83">s</div>
-                <div className="key" data-key="68">d</div>
-                <div className="key" data-key="70">f</div>
-                <div className="key" data-key="71">g</div>
-                <div className="key" data-key="72">h</div>
-                <div className="key" data-key="74">j</div>
-                <div className="key" data-key="75">k</div>
-                <div className="key" data-key="76">l</div>
+                {listKey}
             </div>
         );
     }
