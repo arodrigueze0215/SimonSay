@@ -2,6 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
+    mode: 'production',
     entry:{
         init: path.resolve(__dirname, 'dev/js/init.js')
 
@@ -46,7 +47,7 @@ module.exports = {
                 use:{
                     loader:'babel-loader',
                     options:{
-                        presets:['es2015', 'react', 'stage-2']
+                        presets:['env', 'react', 'stage-2']
                     }
                 }
             }
